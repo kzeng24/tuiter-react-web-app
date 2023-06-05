@@ -1,0 +1,46 @@
+[{
+        "_id": 123,
+        "topic": "Space",
+        "username": "SpaceX",
+        "title": "NASA CyberTruck lands on Mars and picks up the Curiosity rover on its 6' bed",
+        "time": "2h",
+        "image": "nasa.jpeg",
+        "liked": true,
+        "replies": 123,
+        "retuits": 432,
+        "likes": 2345,
+        "handle": "@spacex",
+        "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
+
+    },
+    {
+        "_id": 234,
+        "topic": "Relativity Space",
+        "username": "RelSpace",
+        "title": "100s of Relativity Space Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
+        "time": "2h",
+        "image": "relativitySpace.jpeg",
+        "liked": false,
+        "replies": 243,
+        "retuits": 56,
+        "likes": 24356,
+        "handle": "@relativitySpace",
+        "tuit": "Four people will cohabitate in a small prototype Martian dwelling, mimicking the isolation and stresses of life on the Red Planet."
+
+    },
+    {
+        "_id": 345,
+        "topic": "Energy",
+        "username": "Tesla",
+        "title": "Tesla FSD finally makes driving obsolete. After years of delay, Tesla Full Self Driving can drive you to work while you work, play, or sleep",
+        "time": "4d",
+        "image": "tesla.png",
+        "liked": true,
+        "replies": 64,
+        "retuits": 1342,
+        "likes": 4756,
+        "handle": "@tesla",
+        "tuit": "Tesla currently sells the Full Self-Driving package for a one-time payment of $10,000"
+
+    }
+]

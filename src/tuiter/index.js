@@ -5,12 +5,20 @@ import ExploreScreen from "./pages/explore-screen";
 import HomeScreen from "./pages/home-screen";
 import BookmarksScreen from "./pages/bookmarks-screen";
 import ProfileScreen from "./pages/profile-screen";
-import WhoToFollowListItem from "./who-to-follow-list/who-to-follow-list-item";
 import WhoToFollowList from "./who-to-follow-list";
+import whoReducer from "./reducers/who-reducer";
+import tuitsReducer from "./reducers/tuits.reducer";
+import {configureStore} from "@reduxjs/toolkit";
+import {Provider} from "react-redux";
+
+const store = configureStore(
+  {reducer: {who: whoReducer, tuits: tuitsReducer}}
+);
 
 function Tuiter() {
   return (
-    <div>
+    // provide store to the rest of application so it can pull from global state
+    <Provider store={store}>
       <Nav />
       <div className="row">
         <div className="col-sm-2 col-lg-1 col-xl-2">
@@ -28,7 +36,7 @@ function Tuiter() {
           <WhoToFollowList />
         </div>
       </div>
-    </div>
+    </Provider>
   );
 }
 export default Tuiter;
