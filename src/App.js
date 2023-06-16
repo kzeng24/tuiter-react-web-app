@@ -1,27 +1,37 @@
-import './App.css';
-import Labs from './labs';
-import HelloWorld from './labs/a3/hello-world';
-import Tuiter from './tuiter';
-import {BrowserRouter} from "react-router-dom";
-import { Routes, Route, Navigate } from "react-router";
+import Labs from "./labs";
+import HelloWorld from "./labs/a3/hello-world";
+import Tuiter from "./tuiter";
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router";
+import { Navigate } from "react-router-dom";
+import authReducer from "./tuiter/reducers/auth-reducer";
+import whoReducer from "./tuiter/reducers/who-reducer";
+import tuitsReducer from "./tuiter/reducers/tuits-reducer";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
 
-// declare paths and map them to corresponding component we want to render for that path
-// ex.) Hello World message appears in http://localhost:3000/hello
+const store = configureStore({
+  reducer: {
+    who: whoReducer,
+    tuits: tuitsReducer,
+    user: authReducer,
+  },
+});
 
-// can declare the Lab component as the default landing screen by declaring a
-// route mapped to the root context ("/") that automatically navigates to the Labs component
 function App() {
-    return (
+  return (
+    <Provider store={store}>
       <BrowserRouter>
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Navigate to="/labs/a3" />} />
-            <Route path="/labs/*" element={<Labs />} />
-            <Route path="/hello" element={<HelloWorld />} />
-            <Route path="/tuiter/*" element={<Tuiter />} />
-          </Routes>
-        </div>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Navigate to="/labs" />} />
+              <Route path="/labs/*" element={<Labs />} />
+              <Route path="/hello" element={<HelloWorld />} />
+              <Route path="/tuiter/*" element={<Tuiter />} />
+            </Routes>
+          </div>
       </BrowserRouter>
-    );
+    </Provider>
+  );
 }
 export default App;
