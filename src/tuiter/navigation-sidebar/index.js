@@ -12,7 +12,6 @@ import {FiMoreHorizontal} from "react-icons/fi";
 import {IoMdLogIn } from "react-icons/io";
 import { RiLoginCircleFill } from "react-icons/ri";
 
-
 const NavigationSidebar = () => {
     const {pathname} = useLocation();
     const [ignore, tuiter, active] = pathname.split("/");
